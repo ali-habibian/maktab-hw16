@@ -9,6 +9,7 @@ public class Player implements BaseEntity<Integer> {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
+    private PlayerRole role;
     private Double salary;
 
     @ManyToOne(cascade = CascadeType.ALL)
@@ -33,6 +34,14 @@ public class Player implements BaseEntity<Integer> {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public PlayerRole getRole() {
+        return role;
+    }
+
+    public void setRole(PlayerRole role) {
+        this.role = role;
     }
 
     public Double getSalary() {

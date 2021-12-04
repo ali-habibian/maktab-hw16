@@ -9,13 +9,15 @@ public class Goal implements BaseEntity<Integer> {
     private Integer id;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    private Match match;
+    private Competition competition;
 
     @ManyToOne(cascade = CascadeType.ALL)
     private Player player;
 
     @ManyToOne(cascade = CascadeType.ALL)
     private Club club;
+
+    private Integer season;
 
     @Override
     public Integer getId() {
@@ -27,12 +29,12 @@ public class Goal implements BaseEntity<Integer> {
         this.id = id;
     }
 
-    public Match getMatch() {
-        return match;
+    public Competition getMatch() {
+        return competition;
     }
 
-    public void setMatch(Match match) {
-        this.match = match;
+    public void setMatch(Competition competition) {
+        this.competition = competition;
     }
 
     public Player getPlayer() {
@@ -47,7 +49,15 @@ public class Goal implements BaseEntity<Integer> {
         return club;
     }
 
-    private void setClub(Club club) {
-        this.club = player.getClub();
+    public void setClub(Club club) {
+        this.club = club;
+    }
+
+    public Integer getSeason() {
+        return season;
+    }
+
+    public void setSeason(Integer season) {
+        this.season = season;
     }
 }

@@ -27,10 +27,10 @@ public class Club implements BaseEntity<Integer> {
     private Set<Goal> goals;
 
     @OneToMany(mappedBy = "homeClub", cascade = CascadeType.ALL)
-    private Set<Match> homeMatches;
+    private Set<Competition> homeCompetitions;
 
     @OneToMany(mappedBy = "awayClub", cascade = CascadeType.ALL)
-    private Set<Match> awayMatches;
+    private Set<Competition> awayCompetitions;
 
     @Override
     public Integer getId() {
@@ -90,19 +90,19 @@ public class Club implements BaseEntity<Integer> {
         this.goals = goals;
     }
 
-    public Set<Match> getHomeMatches() {
-        return homeMatches;
+    public Set<Competition> getHomeMatches() {
+        return homeCompetitions;
     }
 
-    public void setHomeMatches(Set<Match> homeMatches) {
-        this.homeMatches = homeMatches;
+    public void setHomeMatches(Set<Competition> homeCompetitions) {
+        this.homeCompetitions = homeCompetitions;
     }
 
-    public Set<Match> getAwayMatches() {
-        return awayMatches;
+    public Set<Competition> getAwayMatches() {
+        return awayCompetitions;
     }
 
-    public void setAwayMatches(Set<Match> awayMatches) {
-        this.awayMatches = awayMatches;
+    public void setAwayMatches(Set<Competition> awayCompetitions) {
+        this.awayCompetitions = awayCompetitions;
     }
 }

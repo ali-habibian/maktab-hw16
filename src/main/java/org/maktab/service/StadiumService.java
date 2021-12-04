@@ -1,6 +1,5 @@
 package org.maktab.service;
 
-import org.maktab.dao.AbstractJpaDao;
 import org.maktab.dao.StadiumDao;
 import org.maktab.entity.Stadium;
 

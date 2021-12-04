@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-public class Match implements BaseEntity<Integer> {
+public class Competition implements BaseEntity<Integer> {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -15,7 +15,11 @@ public class Match implements BaseEntity<Integer> {
     @ManyToOne(cascade = CascadeType.ALL)
     private Club awayClub;
 
-    @OneToMany(mappedBy = "match", cascade = CascadeType.ALL)
+    private Integer homeTeamPoint;
+    private Integer awayTeamPoint;
+    private Integer season;
+
+    @OneToMany(mappedBy = "competition", cascade = CascadeType.ALL)
     private Set<Goal> goals;
 
     @Override
@@ -42,6 +46,30 @@ public class Match implements BaseEntity<Integer> {
 
     public void setAwayClub(Club awayClub) {
         this.awayClub = awayClub;
+    }
+
+    public Integer getHomeTeamPoint() {
+        return homeTeamPoint;
+    }
+
+    public void setHomeTeamPoint(Integer homeTeamPoint) {
+        this.homeTeamPoint = homeTeamPoint;
+    }
+
+    public Integer getAwayTeamPoint() {
+        return awayTeamPoint;
+    }
+
+    public void setAwayTeamPoint(Integer awayTeamPoint) {
+        this.awayTeamPoint = awayTeamPoint;
+    }
+
+    public Integer getSeason() {
+        return season;
+    }
+
+    public void setSeason(Integer season) {
+        this.season = season;
     }
 
     public Set<Goal> getGoals() {

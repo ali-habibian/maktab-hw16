@@ -8,7 +8,7 @@ import java.util.List;
 
 public abstract class AbstractJpaDao<T extends BaseEntity<ID>, ID extends Number> {
     private static final EntityManagerFactory FACTORY =
-            Persistence.createEntityManagerFactory("BankManagement");
+            Persistence.createEntityManagerFactory("LeagueSimulator");
     private static final EntityManager MANAGER = FACTORY.createEntityManager();
 
     public void save(T entity) {
