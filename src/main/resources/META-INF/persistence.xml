@@ -1,0 +1,22 @@
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.2">
+    <persistence-unit name="LeagueSimulator">
+        <class>org.maktab.entity.City</class>
+        <class>org.maktab.entity.Coach</class>
+        <class>org.maktab.entity.Match</class>
+        <class>org.maktab.entity.MatchsPlayerId</class>
+        <class>org.maktab.entity.MatchsPlayer</class>
+        <class>org.maktab.entity.MatchsTeamId</class>
+        <class>org.maktab.entity.MatchsTeam</class>
+        <class>org.maktab.entity.Player</class>
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/league_db"/>
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.password" value=""/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.show_sql" value="false"/>
+            <property name="hibernate.format_sql" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>
