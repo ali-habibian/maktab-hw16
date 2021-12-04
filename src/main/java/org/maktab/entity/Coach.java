@@ -1,7 +1,5 @@
 package org.maktab.entity;
 
-import org.maktab.entity.base.BaseEntity;
-
 import javax.persistence.*;
 
 @Entity

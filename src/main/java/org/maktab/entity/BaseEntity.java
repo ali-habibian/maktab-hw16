@@ -1,4 +1,4 @@
-package org.maktab.entity.base;
+package org.maktab.entity;
 
 public interface BaseEntity<ID extends Number> {
     ID getId();
