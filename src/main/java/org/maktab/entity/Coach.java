@@ -1,6 +1,7 @@
 package org.maktab.entity;
 
 import javax.persistence.*;
+import java.text.DecimalFormat;
 
 @Entity
 public class Coach implements BaseEntity<Integer> {
@@ -45,5 +46,17 @@ public class Coach implements BaseEntity<Integer> {
 
     public void setClub(Club club) {
         this.club = club;
+    }
+
+    @Override
+    public String toString() {
+        DecimalFormat format = new DecimalFormat();
+
+        return "Coach{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", salary=" + format.format(salary) +
+                ", club=" + club.getName() +
+                '}';
     }
 }

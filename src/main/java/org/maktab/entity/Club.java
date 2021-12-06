@@ -105,4 +105,13 @@ public class Club implements BaseEntity<Integer> {
     public void setAwayMatches(Set<Competition> awayCompetitions) {
         this.awayCompetitions = awayCompetitions;
     }
+
+    @Override
+    public String toString() {
+        return "Club{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", city=" + city.getName() +
+                '}';
+    }
 }

@@ -1,9 +1,13 @@
 package org.maktab.dao;
 
 import org.maktab.entity.BaseEntity;
+import org.maktab.entity.Player;
 import org.maktab.exception.DataNotFoundException;
 
 import javax.persistence.*;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import java.util.List;
 
 public abstract class AbstractJpaDao<T extends BaseEntity<ID>, ID extends Number> {
@@ -31,9 +35,17 @@ public abstract class AbstractJpaDao<T extends BaseEntity<ID>, ID extends Number
     }
 
     public List<T> loadAll() {
-        TypedQuery<T> query = MANAGER.createQuery(
-                "select e from " + getEntityClass().getSimpleName() + " e", getEntityClass()
-        );
+//        TypedQuery<T> query = MANAGER.createQuery(
+//                "select e from " + getEntityClass().getSimpleName() + " e", getEntityClass()
+//        );
+//        return query.getResultList();
+
+        CriteriaBuilder cb = MANAGER.getCriteriaBuilder();
+        CriteriaQuery<T> q = cb.createQuery(getEntityClass());
+        Root<T> c = q.from(getEntityClass());
+        q.select(c);
+
+        TypedQuery<T> query = MANAGER.createQuery(q);
         return query.getResultList();
     }
 

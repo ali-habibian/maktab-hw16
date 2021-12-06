@@ -25,6 +25,14 @@ public class Printer {
 //        printWaitingMessage();
     }
 
+    public static void printResultMessage(String msg) {
+        System.out.print(Color.CYAN_BOLD);
+        System.out.println(msg);
+        System.out.print(Color.RESET);
+
+//        printWaitingMessage();
+    }
+
     public static void printWaitingMessage() {
         System.out.println("_____________ press Enter to continue...");
         Input.getOptionalStringInputValue("");

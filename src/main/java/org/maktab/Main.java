@@ -12,8 +12,10 @@ import java.util.Random;
 public class Main {
 
     public static void main(String[] args) {
-        Manager manager = new Manager();
-        manager.playLeagueGames(1401);
+        Menu menu = new Menu();
+        menu.start();
+//        Manager manager = new Manager();
+//        manager.playLeagueGames(1401);
 
         // Add Cities
 //        manager.addNewCity("Liverpool");
@@ -57,8 +59,6 @@ public class Main {
 //            rndSalary = manager.generateRndSalary(0.2, 1.2);
 //            manager.addNewPlayer("#" + i + "ManUnited Player", PlayerRole.ST, rndSalary, 4);
 //        }
-
-        // Make Competitions
     }
 
 }

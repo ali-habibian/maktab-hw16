@@ -12,4 +12,8 @@ public class PlayerService extends AbstractCrudService<Player, Integer> {
     public PlayerDao getBaseDao() {
         return (PlayerDao) super.getBaseDao();
     }
+
+    public Player getExpensivePlayer() {
+        return getBaseDao().getExpensivePlayer();
+    }
 }
